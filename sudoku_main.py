@@ -1,7 +1,6 @@
 import numpy as np
 import solve as sdk
 
-
 board = [
     [7,8,0,4,0,0,0,0,0],
     [6,0,0,0,7,5,0,0,9],
@@ -14,10 +13,8 @@ board = [
     [0,4,9,2,0,6,0,0,7]
 ]
 
-
 sdk.print_board(board)
 if sdk.solve(board):
     pass
 else:
     print('No solution exists.')
-
