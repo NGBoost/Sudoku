@@ -3,11 +3,10 @@
 import numpy as np
 
 def is_valid(grid, num, pos):
-    """
-    Determines whether it will be legal to assign num to the given row,col.
+    """Determines whether it will be legal to assign num to the given row,col.
 
     Args:
-        grid: The Sudoku board. Format: 2D nested lists of integers.
+        grid: 2D nested lists of integers. The Sudoku board.
         num: The number we want to test if it is valid in the given position.
         pos: The position.
 
@@ -35,14 +34,14 @@ def is_valid(grid, num, pos):
     return True
 
 def empty_square(grid):
-    """ Finds an empty square in the Sudoku board and return the position.
+    """Finds an empty square in the Sudoku board and return the position.
 
     Args:
-        grid: The Sudoku board. Format: 2D nested lists of integers.
+        grid: 2D nested lists of integers. The Sudoku board.
 
     Returns:
-        Either a tuple representing the position of the empty square. (row,column).
-        Or None if there is not an empty square.
+        Either a tuple representing the position of the empty square (row,column),
+        or None if there is not an empty square.
     """
     for i in range(len(grid)):
         for j in range(len(grid[0])):
@@ -52,16 +51,16 @@ def empty_square(grid):
     return None
 
 def solve(grid):
-    """
-    Solve the Sudoku puzzle using recursion and backtracking.
-    Takes a partially unassigned filled-in grid and attempts to find a solution.
+    """A Sudoku solver.
+    
+    A solver that finds one of the possible solutions of a Sudoku board,
+    by recursively backtracking through entry values.
 
     Args:
-        grid: The Sudoku grid. Format: 2D nested lists of integers.
+        grid: 2D nested lists of integers. This is an unsolved Sudoku board, with 0's as unknown values.
 
     Returns:
-        True if there is a feasible solution, False if not.
-        N.B. If there is a feasible solution, after the execution of the function we can print the Sudoku solution.
+        True if there is a feasible solution and prints the Sudoku solution, False if the solution is not.
     """
     emp_sqr = empty_square(grid)
 
@@ -89,10 +88,10 @@ def solve(grid):
     return False
 
 def print_board(grid):
-    """ Print the Sudoku board.
+    """Print the Sudoku board.
 
     Args:
-        grid: The Sudoku board. Format: 2D nested lists of integers.
+        grid: 2D nested lists of integers. The Sudoku board.
 
     Returns:
         A user friendly visual representation of the Sudoku board.
@@ -109,4 +108,3 @@ def print_board(grid):
                 print(grid[i][j])
             else:
                 print(str(grid[i][j]) + " ", end="")
-        
