@@ -8,7 +8,7 @@ def is_valid(grid, num, pos):
     Args:
         grid: The Sudoku board. Format: 2D nested lists of integers.
         num: The number we want to test if it is valid in the given position.
-        pos: The position.
+        pos: List. The position.
 
     Returns:
         A boolean which indicates whether it will be legal to assign num to given row,column location.
@@ -40,7 +40,7 @@ def empty_square(grid):
         grid: The Sudoku board. Format: 2D nested lists of integers.
 
     Returns:
-        Either a tuple representing the position of the empty square. (row,column).
+        Either a list representing the position of the empty square. (row,column).
         Or None if there is not an empty square.
     """
     for i in range(len(grid)):
