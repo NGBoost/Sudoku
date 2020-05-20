@@ -13,7 +13,7 @@ board = [
     [0,4,9,2,0,6,0,0,7]
 ]
 
-sdk.print_board(board)
+print(np.matrix(board))
 if sdk.solve(board):
     pass
 else:
