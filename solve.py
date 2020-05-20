@@ -28,7 +28,7 @@ def is_valid(grid, num, pos):
     subgrid_y = (pos[1] // 3) * 3
     for i in range(subgrid_x, subgrid_x + 3):
         for j in range(subgrid_y, subgrid_y + 3):
-            if grid[i][j] == num and (i, j) != pos:
+            if grid[i][j] == num and [i, j] != pos:
                 return False
 
     return True
@@ -46,7 +46,7 @@ def empty_square(grid):
     for i in range(len(grid)):
         for j in range(len(grid)):
             if grid[i][j] == 0:
-                return (i, j)
+                return [i, j]
 
     return None
 
